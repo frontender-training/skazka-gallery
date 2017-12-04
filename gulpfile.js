@@ -116,7 +116,7 @@ gulp.task('serve', function() {
       open: true,
       server: {
         baseDir: 'public/',
-        index: 'photo.html'
+        index: 'photoalbum.html'
      }
     });
     browserSync.watch(['./public/**/*.*'], browserSync.reload);

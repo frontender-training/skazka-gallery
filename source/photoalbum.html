@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Фотогалерея: ЖК Сказака</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.min"/>
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="js/picturefill.js" async></script>
+  </head>
+  <body class="inner-page">
+    <header class="header">
+      <div class="header__wrap">
+        <a href="index.html" class="header__logo">
+          <img class="header__logo-image" src="img/logo.svg" width="156" height="47" alt="Сказка">
+        </a>
+        <nav class="user-nav">
+          <ul class="user-nav__list">
+            <li class="user-nav__item">
+              <a class="user-nav__link" href="#">
+                <!-- svg иконка -->
+                <span class="user-nav__msg">Сообщений</span>
+                <span class="user-nav__msg-count">2</span>
+              </a>
+            </li>
+            <li class="user-nav__item">
+              <a class="user-nav__link" href="#">
+                <span class="user-nav__user-name">Константинов Алексей</span>
+                <img class="user-nav__user-avatar" src="img/content/user_avatar.svg" width="40" height="40" alt="Алексей">
+              </a>
+            </li>
+            <li class="user-nav__item">
+              <a class="user-nav__link user-nav__link--logout" href="#">Выход</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="inner-main">
+      <aside class="sidebar">
+        <ul class="building-menu">
+          <li class="building-menu__item">
+            <a class="building-menu__link" href="#">
+              <!-- svg иконка -->
+              Мой дом
+            </a>
+          </li>
+          <li class="building-menu__item">
+            <a class="building-menu__link" href="#">
+              <!-- svg иконка -->
+              Инфокарта ЖК
+            </a>
+          </li>
+          <li class="building-menu__item">
+            <a class="building-menu__link" href="#">
+              <!-- svg иконка -->
+              Инфраструктура
+            </a>
+          </li>
+          <li class="building-menu__item">
+            <a class="building-menu__link" href="#">
+              <!-- svg иконка -->
+              Дневник стройки
+            </a>
+          </li>
+        </ul>
+
+        <ul class="site-menu">
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">
+              <!-- svg иконка -->
+              Cобытия
+            </a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">
+              <!-- svg иконка -->
+              Опросы
+            </a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">
+              <!-- svg иконка -->
+              Форум
+            </a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">
+              <!-- svg иконка -->
+              Дизайн и ремонт
+            </a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link site-menu__link--active" href="#">
+              <!-- svg иконка -->
+              Фотогалереи
+            </a>
+          </li>
+        </ul>
+
+        <div class="feedback">
+          <a class="feedback__phone" href="tel: +7-495-988-44-22">+7 (495) 988-44-22</a>
+          <p class="feedback__note">Мы отвечаем на вопросы с 10:00 до 19:00 без выходных</p>
+            <div class="feedback__write-us">
+              <div class="feedback__btn feedback__btn--orange">
+                <!-- svg иконка -->
+                <a class="feedback__link" href="feedback.html">Обратная связь</a>
+                <span class="feedback__desc">Напишите администрации</span>
+              </div>
+              <div class="feedback__btn feedback__btn--green">
+                <!-- svg иконка -->
+                <a class="feedback__link" href="photo-defect.html">Фотобрак</a>
+                <span class="feedback__desc">Заявите о найденом недочете</span>
+              </div>
+            </div>
+        </div>
+      </aside>
+
+      <section class="photos">
+        <h1 class="photos__title inner-page__title">Фотогалереи</h1>
+
+        <div class="photos__info">
+          <h2 class="photos__album-name">Архитектура ЖК</h2>
+          <p class="photos__album-desc">Экстерьеры жилых корпусов комплекса</p>
+        </div>
+
+        <div class="photos__counter">
+          <span class="photos__amount-photos">25</span> фотография
+        </div>
+
+        <a class="photos__backlink" href="photo.html">
+          <!-- svg иконка -->
+          Вернуться к списку галерей
+        </a>
+        <ul class="gallery">
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_01.jpg" alt="Фото 1" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_02.jpg" alt="Фото 2" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_03.jpg" alt="Фото 3" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_04.jpg" alt="Фото 4" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_05.jpg" alt="Фото 5" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_06.jpg" alt="Фото 6" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_07.jpg" alt="Фото 7" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_08.jpg" alt="Фото 8" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_09.jpg" alt="Фото 9" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_10.jpg" alt="Фото 10" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_11.jpg" alt="Фото 11" />
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="#">
+              <picture class="gallery__thumb">
+                <img src="img/content/photo_thumb_12.jpg" alt="Фото 12" />
+              </picture>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
