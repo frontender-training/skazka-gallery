@@ -1,9 +1,10 @@
-@import "../base/normalize.scss";
-@import "../base/fonts.scss";
-// @import "../base/scaffolding.scss";
+@import '../base/normalize.scss';
+@import '../base/fonts.scss';
+@import '../base/scaffolding.scss';
 
 body {
-  font-family: "Museo Sans";
+  font-family: 'Museo Sans', 'Trebuchet MS', sans-serif;
+  font-weight: 100;
   color: red;
   text-transform: uppercase;
 }
