@@ -2,18 +2,8 @@
 
 // Определим необходимые инструменты
 var gulp = require('gulp'),
-    gp = require('gulp-load-plugins'),
-
-    // plumber = require('gulp-plumber'),
-    // rename = require('gulp-rename'),
-    // sourcemaps = require('gulp-sourcemaps'),
-    // postcss = require('gulp-postcss'),
-    // minify = require('gulp-csso'),
-    // fileinclude = require('gulp-file-include'),
-    // imagemin = require("gulp-imagemin"),
-    // webp = require("gulp-webp"),
-    // svgstore = require("gulp-svgstore"),
-    // sass = require("gulp-sass"),
+    gp = require('gulp-load-plugins')(),
+    fileinclude = require('gulp-file-include'),
 
     autoprefixer = require('autoprefixer'),
     mqpacker = require('css-mqpacker'),
@@ -22,35 +12,35 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create();
 
 // ЗАДАЧА: Компиляция CSS
-// gulp.task('styles', function() {
-//   return gulp.src('./source/sass/path/style.scss')         // какой файл компилировать
-//     .pipe(gp.plumber())                                   // отлавливаем ошибки
-//     .pipe(gp.sourcemaps.init())                              // инициируем карту кода
-//     .pipe(gp.sass())                                         // компилируем в CSS
-//     .pipe(gp.postcss([                                       // делаем постпроцессинг
-//       autoprefixer({ browsers: ['last 2 version'] }),     // автопрефиксирование
-//       mqpacker({ sort: true })                            // объединение медиавыражений
-//     ]))
-//     .pipe(gp.sourcemaps.write())
-//     .pipe(gulp.dest('./public/css'))                       // записываем CSS-файл
-//     .pipe(gp.minify())                                        // минифицируем CSS-файл
-//     .pipe(gp.rename({ suffix: '.min' }))                      // переименовываем CSS-файл
-//     .pipe(gulp.dest('./public/css'))                       // записываем CSS-файл
-//     .pipe(browserSync.stream());
-// });
+gulp.task('styles', function() {
+  return gulp.src('./source/sass/path/style.scss')         // какой файл компилировать
+    .pipe(gp.plumber())                                   // отлавливаем ошибки
+    .pipe(gp.sourcemaps.init())                              // инициируем карту кода
+    .pipe(gp.sass())                                         // компилируем в CSS
+    .pipe(gp.postcss([                                       // делаем постпроцессинг
+      autoprefixer({ browsers: ['last 2 version'] }),     // автопрефиксирование
+      mqpacker({ sort: true })                            // объединение медиавыражений
+    ]))
+    .pipe(gp.sourcemaps.write())
+    .pipe(gulp.dest('./public/css'))                       // записываем CSS-файл
+    .pipe(gp.csso())                                        // минифицируем CSS-файл
+    .pipe(gp.rename({ suffix: '.min' }))                      // переименовываем CSS-файл
+    .pipe(gulp.dest('./public/css'))                       // записываем CSS-файл
+    .pipe(browserSync.stream());
+});
 
 // ЗАДАЧА: Сборка HTML
 gulp.task('html:process', function() {
   return gulp.src('./source/*.html')                      // какие файлы обрабатывать
-    // .pipe(gp.plumber())
-    // .pipe(gp.fileinclude({                                   // обрабатываем gulp-file-include
-    //   prefix: '@@',
-    //   basepath: '@file'
-    // }))
+    .pipe(gp.plumber())
+    .pipe(fileinclude({                                // обрабатываем gulp-file-include
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(gulp.dest('./public/'));                         // записываем файлы
 });
 
-// ЗАДАЧА: Оптимизируем декоративные PNG, JPG, SVG
+// // ЗАДАЧА: Оптимизируем декоративные PNG, JPG, SVG
 // gulp.task('images:decor', function() {
 //   return gulp.src('./source/img/decoration/**/*.{png,jpg,jpeg,svg}')
 //   .pipe(gp.plumber())                                        // отлавливаем ошибки
@@ -100,9 +90,9 @@ gulp.task('clean', function() {
 
 gulp.task('copy', function() {
   return gulp.src([
-    './source//fonts/**/*.{woff,woff2}',
-    './source//img/**',
-    './source//js/**',
+    './source/fonts/**/*.otf',
+    './source/img/**',
+    './source/js/**',
     './source/*.html'
   ], {
     base: "./source"
@@ -124,7 +114,7 @@ gulp.task('serve', function() {
 
 gulp.task('watch', function() {
     // $.gulp.watch('./source/js/**/*.js', $.gulp.series('js:process'));
-    // gulp.watch('./source/sass/**/*.scss', gulp.series('styles'));     // следим за CSS
+    gulp.watch('./source/sass/**/*.scss', gulp.series('styles'));     // следим за CSS
     gulp.watch('./source/**/*.html', gulp.series('html:process'));  // следим за HTML
     // gulp.watch('./source/img/content/**/*.*', gulp.series('images:content')); // следим за картинками
     // gulp.watch('./source/img/decoration/**/*.*', gulp.series('images:decor')); // следим за картинками
@@ -138,13 +128,13 @@ gulp.task('default',
   'clean',
   'copy',
   'html:process',
-  // gulp.parallel(
-  //   'styles',
-  //   'images:decor',
-  //   'images:content',
-  //   'webp',
-  //   'sprite'
-  // ),
+  gulp.parallel(
+    'styles',
+    // 'images:decor',
+    // 'images:content',
+    // 'webp',
+    // 'sprite'
+  ),
   gulp.parallel(
     'watch',
     'serve'
