@@ -1,0 +1,15 @@
+.building-menu {
+  @include aside-wrap;
+  padding-top: 45px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  list-style: none;
+}
+
+.building-menu__item {
+  @include menu-item;
+}
+
+.building-menu__link {
+  @include menu-style ($color-menu);
+}

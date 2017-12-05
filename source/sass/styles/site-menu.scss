@@ -1,0 +1,14 @@
+.site-menu {
+  @include aside-wrap;
+  margin-top: 0;
+  margin-bottom: 155px;
+  list-style: none;
+}
+
+.site-menu__item {
+  @include menu-item;
+}
+
+.site-menu__link {
+  @include menu-style ($color-menu);
+}

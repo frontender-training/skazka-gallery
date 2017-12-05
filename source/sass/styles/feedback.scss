@@ -1,0 +1,53 @@
+.feedback {
+  color: #716048;
+}
+
+.feedback__phone {
+  @include aside-wrap;
+  @include text-size(14px, 28px);
+  color: #716048;
+
+  &:hover {
+    color: $color-orange;
+  }
+
+  &:focus {
+    color: $color-orange;
+  }
+
+  &:visited {
+   color: #716048;
+  }
+}
+
+.feedback__note {
+  @include aside-wrap;
+  margin-bottom: 38px;
+}
+
+.feedback__btn {
+  @include aside-wrap;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  cursor: pointer;
+
+  &--orange {
+    background-color: $color-orange;
+  }
+
+  &--green {
+    background-color: $color-green;
+  }
+}
+
+.feedback__link {
+  @include menu-style(#ffe987);
+
+  &:visited {
+    color: #ffe987;
+  }
+}
+
+.feedback__desc {
+  display: block;
+}
