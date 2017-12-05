@@ -1,0 +1,9 @@
+@import "../base/normalize.scss";
+@import "../base/fonts.scss";
+// @import "../base/scaffolding.scss";
+
+body {
+  font-family: "Museo Sans";
+  color: red;
+  text-transform: uppercase;
+}
