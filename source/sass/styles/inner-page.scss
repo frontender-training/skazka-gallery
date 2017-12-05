@@ -1,0 +1,14 @@
+.inner-page {
+  width: 1280px;
+  padding: 0;
+  margin: 0 auto;
+  background-color: ffffff;
+  background-image: url('../bg.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.inner-page__main {
+  height: 570px;
+  display: flex;
+}

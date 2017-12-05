@@ -1,0 +1,60 @@
+// Миксины для временного файла outline, отключаются вместе с файлом
+@mixin box-shadow($color) {
+  position: relative;
+  box-shadow: 0 0 0 3px $color;
+}
+
+@mixin before($color) {
+  background: $color;
+  top: auto;
+  bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+  position: absolute;
+}
+
+.header {
+  @include box-shadow(#008000);
+
+  &::before {
+    @include before(#008000);
+    content: ".header";
+  }
+}
+
+.inner-page__main {
+  @include box-shadow(#ff2d52);
+
+  &::before {
+    @include before (#ff2d52);
+    content: ".inner-page__main";
+  }
+}
+
+.header__wrap {
+  @include box-shadow(#272cfd);
+
+  &::before {
+    @include before (#272cfd);
+    content: ".header__wrap";
+  }
+}
+
+.sidebar {
+  @include box-shadow(#008000);
+
+  &::before {
+    @include before(#008000);
+    content: ".sidebar";
+  }
+}
+
+.photos {
+  @include box-shadow(#ffc800);
+
+  &::before {
+    @include before (#ffc800);
+    content: ".photos";
+  }
+}
