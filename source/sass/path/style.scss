@@ -2,14 +2,11 @@
 @import '../base/fonts.scss';
 @import '../base/scaffolding.scss';
 @import '../base/outlines.scss';
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
 @import '../styles/inner-page.scss';
 @import '../styles/header.scss';
+@import '../styles/user-nav.scss';
 @import '../styles/sidebar.scss';
-@import '../styles/photos.scss';
-
-body {
-  font-family: 'Museo Sans', 'Trebuchet MS', sans-serif;
-  font-weight: 100;
-  color: red;
-  text-transform: uppercase;
-}
+@import '../styles/feedback.scss';
+@import '../styles/gallery.scss';

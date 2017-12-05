@@ -1,0 +1,7 @@
+.user-nav__link {
+  @include menu-style;
+
+  &--logout {
+    color: #8f8260;
+  }
+}

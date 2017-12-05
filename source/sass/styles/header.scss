@@ -1,8 +1,11 @@
 .header {
   height: 90px;
+  background-color: #331e19;
 }
 
 .header__wrap {
   padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
   height: inherit;
 }

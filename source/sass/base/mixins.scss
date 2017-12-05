@@ -1,0 +1,38 @@
+@mixin wrapper {
+  padding-left: 30px;
+}
+
+@mixin aside-wrap {
+  padding-left: 45px;
+  padding-right: 15px;
+}
+
+@mixin menu-item {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+@mixin menu-style ($color: #cfc38f) {
+  font-size: 11px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $color;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $color-orange;
+  }
+
+  &:focus {
+    color: $color-orange;
+  }
+
+  &--active {
+    color: #5b852c;
+  }
+}
+
+@mixin text-size ($font-size: 11px, $line-height: 16px) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
