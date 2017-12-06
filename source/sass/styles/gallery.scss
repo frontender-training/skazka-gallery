@@ -1,0 +1,85 @@
+.gallery {
+  width: calc(100% - 285px);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery__title {
+  @include wrapper;
+  @include text-size(18px, 18px);
+  color: #331e19;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 995px;
+  height: 80px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  margin: 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.gallery__description {
+  @include wrapper;
+  padding-right: 45px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  width: 703px;
+  height: 145px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery__counter {
+  @include text-size(14px, 18px);
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: #331e19;
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: 2px;
+}
+
+.gallery__backlink {
+  @include text-size(14px, 18px);
+  width: 293px;
+  height: 145px;
+  display: block;
+  background-color: #cfc38f;
+  color: #331e19;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-top: 20px;
+  padding-left: 35px;
+  padding-right: 30px;
+}
+
+.gallery__info {
+  width: 200px;
+}
+
+.gallery__album-name {
+  @include text-size(12px, 24px);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #5b852c;
+}
+
+.gallery__album-desc {
+  @include text-size(14px, 24px);
+  margin: 0;
+  color: #331e19;
+}
+
+.gallery__amount-photos {
+  @include text-size(48px, 22px);
+  display: block;
+  color: #cfc38f;
+  margin-bottom: 20px;
+}
+
+.gallery__list {
+  width: 995px;
+  margin: 0;
+}

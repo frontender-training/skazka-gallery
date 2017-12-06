@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Фотогалерея: ЖК Сказака</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/style.min"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <script>
       // Picture element HTML5 shiv
       document.createElement( "picture" );
@@ -39,7 +39,7 @@
         </nav>
       </div>
     </header>
-    <main class="inner-main">
+    <main class="inner-page__main">
       <aside class="sidebar">
         <ul class="building-menu">
           <li class="building-menu__item">
@@ -104,38 +104,38 @@
         <div class="feedback">
           <a class="feedback__phone" href="tel: +7-495-988-44-22">+7 (495) 988-44-22</a>
           <p class="feedback__note">Мы отвечаем на вопросы с 10:00 до 19:00 без выходных</p>
-            <div class="feedback__write-us">
-              <div class="feedback__btn feedback__btn--orange">
-                <!-- svg иконка -->
-                <a class="feedback__link" href="feedback.html">Обратная связь</a>
-                <span class="feedback__desc">Напишите администрации</span>
-              </div>
-              <div class="feedback__btn feedback__btn--green">
-                <!-- svg иконка -->
-                <a class="feedback__link" href="photo-defect.html">Фотобрак</a>
-                <span class="feedback__desc">Заявите о найденом недочете</span>
-              </div>
+          <div class="feedback__write-us">
+            <div class="feedback__btn feedback__btn--orange">
+               <!-- svg иконка -->
+              <a class="feedback__link" href="feedback.html">Обратная связь</a>
+              <span class="feedback__desc">Напишите администрации</span>
             </div>
+            <div class="feedback__btn feedback__btn--green">
+              <!-- svg иконка -->
+              <a class="feedback__link" href="photo-defect.html">Фотобрак</a>
+            <span class="feedback__desc">Заявите о найденом недочете</span>
+            </div>
+          </div>
         </div>
       </aside>
 
-      <section class="photos">
-        <h1 class="photos__title inner-page__title">Фотогалереи</h1>
+      <section class="gallery">
+        <h1 class="gallery__title">Фотогалереи</h1>
+        <div class="gallery__description">
+          <div class="gallery__info">
+            <h2 class="gallery__album-name">Архитектура ЖК</h2>
+            <p class="gallery__album-description">Экстерьеры жилых корпусов комплекса</p>
+          </div>
 
-        <div class="photos__info">
-          <h2 class="photos__album-name">Архитектура ЖК</h2>
-          <p class="photos__album-desc">Экстерьеры жилых корпусов комплекса</p>
+          <div class="gallery__counter">
+            <span class="gallery__amount-photos">25</span> фотографий
+          </div>
         </div>
-
-        <div class="photos__counter">
-          <span class="photos__amount-photos">25</span> фотография
-        </div>
-
-        <a class="photos__backlink" href="photo.html">
+        <a class="gallery__backlink" href="photo.html">
           <!-- svg иконка -->
-          Вернуться к списку галерей
+          Вернуться <br>к списку галерей
         </a>
-        <ul class="gallery">
+       <!--  <ul class="gallery__list">
           <li class="gallery__item">
             <a class="gallery__link" href="#">
               <picture class="gallery__thumb">
@@ -220,7 +220,7 @@
               </picture>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </section>
     </main>
   </body>
