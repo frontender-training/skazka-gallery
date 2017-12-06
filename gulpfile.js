@@ -41,28 +41,28 @@ gulp.task('html:process', function() {
 });
 
 // // ЗАДАЧА: Оптимизируем декоративные PNG, JPG, SVG
-// gulp.task('images:decor', function() {
-//   return gulp.src('./source/img/decoration/**/*.{png,jpg,jpeg,svg}')
-//   .pipe(gp.plumber())                                        // отлавливаем ошибки
-//   .pipe(gp.imagemin([
-//     imagemin.jpegtran({progressive: true}),               // сжимаем PNG
-//     imagemin.optipng({optimizationLevel: 3}),             // сжимаем PNG и определяем степень сжатия
-//     imagemin.svgo()                                       // сжимаем SVG
-//   ]))
-//   .pipe(gulp.dest('./public/img/decoration'));               // записываем файлы
-// });
+gulp.task('images:decor', function() {
+  return gulp.src('./source/img/decoration/**/*.{png,jpg,jpeg,svg}')
+  .pipe(gp.plumber())                                        // отлавливаем ошибки
+  .pipe(gp.imagemin([
+    gp.imagemin.jpegtran({progressive: true}),               // сжимаем PNG
+    gp.imagemin.optipng({optimizationLevel: 3}),             // сжимаем PNG и определяем степень сжатия
+    gp.imagemin.svgo()                                       // сжимаем SVG
+  ]))
+  .pipe(gulp.dest('./public/img/decoration'));               // записываем файлы
+});
 
 // ЗАДАЧА: Оптимизируем контентные PNG, JPG, SVG
-// gulp.task('images:content', function() {
-//   return gulp.src('./source/img/content/**/*.{png,jpg,jpeg,svg}')
-//   .pipe(gp.plumber())                                        // отлавливаем ошибки
-//   .pipe(gp.imagemin([
-//     imagemin.jpegtran({progressive: true}),               // сжимаем PNG
-//     imagemin.optipng({optimizationLevel: 3}),             // сжимаем PNG и определяем степень сжатия
-//     imagemin.svgo()                                       // сжимаем SVG
-//   ]))
-//   .pipe(gulp.dest('./public/img/content'));               // записываем файлы
-// });
+gulp.task('images:content', function() {
+  return gulp.src('./source/img/content/**/*.{png,jpg,jpeg,svg}')
+  .pipe(gp.plumber())                                        // отлавливаем ошибки
+  .pipe(gp.imagemin([
+    gp.imagemin.jpegtran({progressive: true}),               // сжимаем PNG
+    gp.imagemin.optipng({optimizationLevel: 3}),             // сжимаем PNG и определяем степень сжатия
+    gp.imagemin.svgo()                                       // сжимаем SVG
+  ]))
+  .pipe(gulp.dest('./public/img/content'));               // записываем файлы
+});
 
 // ЗАДАЧА: Создаем файлы WEBP для хромиум-браузеров
 // gulp.task('webp', function () {
@@ -73,15 +73,15 @@ gulp.task('html:process', function() {
 // });
 
 // ЗАДАЧА: Создаем SVG-спрайт
-// gulp.task('sprite', function () {
-//   return gulp.src('./source/img/sprite/*.svg')            // какие файлы обрабатывать
-//     .pipe(gp.plumber())                                      // отлавливаем ошибки
-//     .pipe(gp.svgstore({
-//       inlineSvg: true                                     // прописываем условие на тот случай, если будем инлайнить спрайт в html
-//     }))
-//     .pipe(gp.rename('sprite.svg'))                           // даем имя спрайту
-//     .pipe(gulp.dest('./public/img/'));                    // записываем файл
-// });
+gulp.task('sprite', function () {
+  return gulp.src('./source/img/sprite/*.svg')            // какие файлы обрабатывать
+    .pipe(gp.plumber())                                      // отлавливаем ошибки
+    .pipe(gp.svgstore({
+      inlineSvg: true                                     // прописываем условие на тот случай, если будем инлайнить спрайт в html
+    }))
+    .pipe(gp.rename('sprite.svg'))                           // даем имя спрайту
+    .pipe(gulp.dest('./public/img/'));                    // записываем файл
+});
 
 // ЗАДАЧА: Удаляем папку public
 gulp.task('clean', function() {
@@ -116,10 +116,10 @@ gulp.task('watch', function() {
     // $.gulp.watch('./source/js/**/*.js', $.gulp.series('js:process'));
     gulp.watch('./source/sass/**/*.scss', gulp.series('styles'));     // следим за CSS
     gulp.watch('./source/**/*.html', gulp.series('html:process'));  // следим за HTML
-    // gulp.watch('./source/img/content/**/*.*', gulp.series('images:content')); // следим за картинками
-    // gulp.watch('./source/img/decoration/**/*.*', gulp.series('images:decor')); // следим за картинками
+    gulp.watch('./source/img/content/**/*.*', gulp.series('images:content')); // следим за картинками
+    gulp.watch('./source/img/decoration/**/*.*', gulp.series('images:decor')); // следим за картинками
     // gulp.watch('./source/img/content/**/*.*', gulp.series('webp')); // следим за картинками
-    // gulp.watch('./source/img/sprite/**/*.*', gulp.series('sprite')); // следим за спрайтом
+    gulp.watch('./source/img/sprite/**/*.*', gulp.series('sprite')); // следим за спрайтом
   });
 
 // ЗАДАЧА: Сборка всего и локальный сервер
@@ -130,10 +130,10 @@ gulp.task('default',
   'html:process',
   gulp.parallel(
     'styles',
-    // 'images:decor',
-    // 'images:content',
+    'images:decor',
+    'images:content',
     // 'webp',
-    // 'sprite'
+    'sprite'
   ),
   gulp.parallel(
     'watch',
