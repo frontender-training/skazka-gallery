@@ -1,7 +1,50 @@
+.user-nav {
+  width: calc(100% - 285px);
+}
+
+.user-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .user-nav__link {
   @include menu-style;
+
+  &--msg {
+    margin-right: 50px;
+  }
 
   &--logout {
     color: #8f8260;
   }
+
+  &--profil {
+    display: flex;
+    align-items: center;
+    margin-right: 34px;
+  }
+}
+
+.user-nav__msg {
+  margin-right: 20px;
+}
+
+.user-nav__msg-count {
+  padding: 5px 8px;
+  background-color: #ffe987;
+  color: #331e19;
+  border-radius: 50%;
+}
+
+.user-nav__user-avatar {
+  border-radius: 50%;
+}
+
+.user-nav__user-name {
+  display: block;
+  margin-right: 20px;
 }

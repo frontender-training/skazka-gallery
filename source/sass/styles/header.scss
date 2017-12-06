@@ -7,5 +7,11 @@
   padding: 0 30px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: inherit;
+}
+
+.header__logo {
+  width: 156px;
+  height: 47px;
 }

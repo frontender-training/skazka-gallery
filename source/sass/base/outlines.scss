@@ -14,41 +14,59 @@
   position: absolute;
 }
 
-.header {
-  @include box-shadow(#008000);
+// .header {
+//   @include box-shadow(#008000);
 
-  &::before {
-    @include before(#008000);
-    content: ".header";
-  }
-}
+//   &::before {
+//     @include before(#008000);
+//     content: ".header";
+//   }
+// }
 
-.inner-page__main {
-  @include box-shadow(#ff2d52);
+// .inner-page__main {
+//   @include box-shadow(#ff2d52);
 
-  &::before {
-    @include before (#ff2d52);
-    content: ".inner-page__main";
-  }
-}
+//   &::before {
+//     @include before (#ff2d52);
+//     content: ".inner-page__main";
+//   }
+// }
 
-.header__wrap {
-  @include box-shadow(#272cfd);
+// .header__wrap {
+//   @include box-shadow(#272cfd);
 
-  &::before {
-    @include before (#272cfd);
-    content: ".header__wrap";
-  }
-}
+//   &::before {
+//     @include before (#272cfd);
+//     content: ".header__wrap";
+//   }
+// }
 
-.sidebar {
-  @include box-shadow(#008000);
+// .header__logo {
+//   @include box-shadow(#ff2d52);
 
-  &::before {
-    @include before(#008000);
-    content: ".sidebar";
-  }
-}
+//   &::before {
+//     @include before (#ff2d52);
+//     content: ".header__logo";
+//   }
+// }
+
+// .user-nav {
+//   @include box-shadow(#008000);
+
+//   &::before {
+//     @include before (#008000);
+//     content: ".user-nav ";
+//   }
+// }
+
+// .sidebar {
+//   @include box-shadow(#008000);
+
+//   &::before {
+//     @include before(#008000);
+//     content: ".sidebar";
+//   }
+// }
 
 // .gallery {
 //   @include box-shadow(#ffc800);
