@@ -3,6 +3,7 @@
 // Определим необходимые инструменты
 var gulp = require('gulp'),
     gp = require('gulp-load-plugins')(),
+    include = require("posthtml-include"),
     fileinclude = require('gulp-file-include'),
 
     autoprefixer = require('autoprefixer'),
@@ -33,7 +34,10 @@ gulp.task('styles', function() {
 gulp.task('html:process', function() {
   return gulp.src('./source/*.html')                      // какие файлы обрабатывать
     .pipe(gp.plumber())
-    .pipe(fileinclude({                                // обрабатываем gulp-file-include
+    .pipe(gp.posthtml([
+      include()                                          // инлайнит спрайт
+    ]))
+    .pipe(fileinclude({                                   // обрабатываем gulp-file-include
       prefix: '@@',
       basepath: '@file'
     }))
@@ -127,13 +131,14 @@ gulp.task('default',
   gulp.series(
   'clean',
   'copy',
+  'sprite',
   'html:process',
   gulp.parallel(
     'styles',
     'images:decor',
-    'images:content',
+    'images:content'
     // 'webp',
-    'sprite'
+    // 'sprite'
   ),
   gulp.parallel(
     'watch',

@@ -23,8 +23,16 @@
     color: $color-orange;
   }
 
+  &:hover svg {
+    fill: $color-orange;
+  }
+
   &:focus {
     color: $color-orange;
+  }
+
+  &:focus svg {
+    fill: $color-orange;
   }
 
   &--active {

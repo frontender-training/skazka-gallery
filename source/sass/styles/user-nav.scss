@@ -1,5 +1,5 @@
 .user-nav {
-  width: calc(100% - 285px);
+  width: calc(100% - 285px - 30px);
 }
 
 .user-nav__list {
@@ -13,9 +13,10 @@
 
 .user-nav__link {
   @include menu-style;
+  letter-spacing: 1px;
 
   &--msg {
-    margin-right: 50px;
+    margin-right: 48px;
   }
 
   &--logout {
@@ -27,17 +28,27 @@
     align-items: center;
     margin-right: 34px;
   }
+
+  &:hover .user-nav__msg-count {
+    background-color: $color-orange;
+    color: #ffe987;
+  }
 }
 
 .user-nav__msg {
-  margin-right: 20px;
+  margin-right: 17px;
 }
 
 .user-nav__msg-count {
-  padding: 5px 8px;
   background-color: #ffe987;
   color: #331e19;
   border-radius: 50%;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .user-nav__user-avatar {
@@ -46,5 +57,11 @@
 
 .user-nav__user-name {
   display: block;
-  margin-right: 20px;
+  margin-right: 21px;
 }
+
+.user-nav__icon-msg {
+  fill: #cfc38f;
+  margin-right: 13px;
+}
+

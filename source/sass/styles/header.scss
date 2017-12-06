@@ -1,6 +1,9 @@
 .header {
   height: 90px;
   background-color: #331e19;
+  background-image: url('../img/decoration/bg-header.svg');
+  background-position: 186px 0;
+  background-repeat: no-repeat;
 }
 
 .header__wrap {
@@ -13,5 +16,17 @@
 
 .header__logo {
   width: 156px;
-  height: 47px;
+  height: 50px;
+
+  &:hover .header__logo-image {
+    fill: $color-orange;
+  }
+
+  &:focus .header__logo-image {
+    fill: $color-orange;
+  }
+}
+
+.header__logo-image {
+  fill: #cfc38f;
 }
