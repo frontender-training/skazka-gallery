@@ -50,29 +50,38 @@
   }
 }
 
-.gallery {
-  @include box-shadow(#ffc800);
+// .gallery {
+//   @include box-shadow(#ffc800);
 
-  &::before {
-    @include before (#ffc800);
-    content: ".photos";
-  }
-}
+//   &::before {
+//     @include before (#ffc800);
+//     content: ".photos";
+//   }
+// }
 
-.gallery__description {
-  @include box-shadow(#008000);
+// .gallery__description {
+//   @include box-shadow(#008000);
 
-  &::before {
-    @include before(#008000);
-    content: ".gallery__description";
-  }
-}
+//   &::before {
+//     @include before(#008000);
+//     content: ".gallery__description";
+//   }
+// }
 
-.gallery__backlink {
-  @include box-shadow(#272cfd);
+// .gallery__backlink {
+//   @include box-shadow(#272cfd);
 
-  &::before {
-    @include before (#272cfd);
-    content: ".gallery__backlink";
-  }
-}
+//   &::before {
+//     @include before (#272cfd);
+//     content: ".gallery__backlink";
+//   }
+// }
+
+// .gallery__list {
+//   @include box-shadow(#ffc800);
+
+//   &::before {
+//     @include before (#ffc800);
+//     content: ".gallery__list";
+//   }
+// }
