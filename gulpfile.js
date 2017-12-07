@@ -70,12 +70,12 @@ gulp.task('images:content', function() {
 });
 
 // ЗАДАЧА: Создаем файлы WEBP для хромиум-браузеров
-// gulp.task('webp', function () {
-//   return gulp.src('./source/img/content/**/*.{png,jpg}')  // какие файлы обрабатывать
-//     .pipe(gp.plumber())                                      // отлавливаем ошибки
-//     .pipe(gp.webp({quality: 80}))                            // конвертируем в webp и определяем степень сжатия
-//     .pipe(gulp.dest('./public/img/content'));             // записываем файлы
-// });
+gulp.task('webp', function () {
+  return gulp.src('./source/img/content/**/*.{png,jpg}')  // какие файлы обрабатывать
+    .pipe(gp.plumber())                                      // отлавливаем ошибки
+    .pipe(gp.webp({quality: 80}))                            // конвертируем в webp и определяем степень сжатия
+    .pipe(gulp.dest('./public/img/content'));             // записываем файлы
+});
 
 // ЗАДАЧА: Создаем SVG-спрайт
 gulp.task('sprite', function () {
@@ -126,7 +126,7 @@ gulp.task('watch', function() {
     gulp.watch('./source/**/*.html', gulp.series('html:process'));  // следим за HTML
     gulp.watch('./source/img/content/**/*.*', gulp.series('images:content')); // следим за картинками
     gulp.watch('./source/img/decoration/**/*.*', gulp.series('images:decor')); // следим за картинками
-    // gulp.watch('./source/img/content/**/*.*', gulp.series('webp')); // следим за картинками
+    gulp.watch('./source/img/content/**/*.*', gulp.series('webp')); // следим за картинками
     gulp.watch('./source/img/sprite/**/*.*', gulp.series('sprite')); // следим за спрайтом
   });
 
@@ -140,8 +140,8 @@ gulp.task('default',
   gulp.parallel(
     'styles',
     'images:decor',
-    'images:content'
-    // 'webp',
+    'images:content',
+    'webp',
   ),
   gulp.parallel(
     'watch',
