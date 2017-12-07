@@ -1,5 +1,8 @@
 .sidebar {
   width: 285px;
-  height: inherit;
+  height: calc(100vh - 90px);
   background-color: #cfc38f;
+  position: fixed;
+  top: 90px;
+  overflow-y: auto;
 }
