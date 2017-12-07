@@ -139,17 +139,27 @@
 
         <div class="feedback">
           <a class="feedback__phone" href="tel: +7-495-988-44-22">+7 (495) 988-44-22</a>
-          <p class="feedback__note">Мы отвечаем на вопросы с 10:00 до 19:00 без выходных</p>
+          <p class="feedback__note">Мы отвечаем на вопросы <br>с 10:00 до 19:00 без выходных</p>
           <div class="feedback__write-us">
             <div class="feedback__btn feedback__btn--orange">
-               <!-- svg иконка -->
-              <a class="feedback__link" href="feedback.html">Обратная связь</a>
-              <span class="feedback__desc">Напишите администрации</span>
+              <svg class="feedback__icon" width="12" height="10" aria-labelledby="feedback__icon-title">
+                <title id="feedback__icon-title">Напишите администрации</title>
+                <use xlink:href="#mail"></use>
+              </svg>
+              <div class="feedback__layout">
+                <a class="feedback__link" href="feedback.html">Обратная связь</a>
+                <span class="feedback__desc">Напишите администрации</span>
+              </div>
             </div>
             <div class="feedback__btn feedback__btn--green">
-              <!-- svg иконка -->
-              <a class="feedback__link" href="photo-defect.html">Фотобрак</a>
-            <span class="feedback__desc">Заявите о найденом недочете</span>
+              <svg class="feedback__icon" width="12" height="10" aria-labelledby="feedback__icon-title">
+                <title id="feedback__icon-title">Заявите о найденом недочете</title>
+                <use xlink:href="#alarm"></use>
+              </svg>
+              <div class="feedback__layout">
+                <a class="feedback__link" href="photo-defect.html">Фотобрак</a>
+                <span class="feedback__desc">Заявите о найденом недочете</span>
+              </div>
             </div>
           </div>
         </div>

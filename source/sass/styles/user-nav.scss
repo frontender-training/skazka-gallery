@@ -17,6 +17,14 @@
 
   &--msg {
     margin-right: 48px;
+
+    .user-nav__msg {
+      line-height: 18px;
+    }
+
+    .user-nav__msg-count {
+      line-height: 26px;
+    }
   }
 
   &--logout {
@@ -63,5 +71,7 @@
 .user-nav__icon-msg {
   fill: #cfc38f;
   margin-right: 13px;
+  margin-top: 4px;
+  align-self: baseline;
 }
 

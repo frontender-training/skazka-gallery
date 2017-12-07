@@ -5,6 +5,7 @@
 .feedback__phone {
   @include aside-wrap;
   @include text-size(14px, 28px);
+  letter-spacing: 1px;
   color: #716048;
 
   &:hover {
@@ -27,9 +28,11 @@
 
 .feedback__btn {
   @include aside-wrap;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   &--orange {
     background-color: $color-orange;
@@ -38,10 +41,18 @@
   &--green {
     background-color: $color-green;
   }
+
+  &:hover {
+    background-color: #331e19;
+  }
+
+  &:focus {
+    background-color: #331e19;
+  }
 }
 
 .feedback__link {
-  @include menu-style(#ffe987);
+  @include btn-style(#ffe987);
 
   &:visited {
     color: #ffe987;
@@ -50,4 +61,10 @@
 
 .feedback__desc {
   display: block;
+  color: #cfc38f;
+}
+
+.feedback__icon {
+  fill: #ffe987;
+  margin-right: 29px;
 }
