@@ -12,3 +12,7 @@
 .site-menu__link {
   @include menu-style ($color-menu);
 }
+
+.site-menu__icon {
+  @include menu-icon;
+}

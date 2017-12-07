@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     gp = require('gulp-load-plugins')(),
     include = require("posthtml-include"),
     fileinclude = require('gulp-file-include'),
+    rsp = require('remove-svg-properties').stream,
 
     autoprefixer = require('autoprefixer'),
     mqpacker = require('css-mqpacker'),
@@ -80,6 +81,9 @@ gulp.task('images:content', function() {
 gulp.task('sprite', function () {
   return gulp.src('./source/img/sprite/*.svg')            // какие файлы обрабатывать
     .pipe(gp.plumber())                                      // отлавливаем ошибки
+    .pipe(rsp.remove({                                     // удаляем атрибуты
+        properties: [rsp.PROPS_FILL]
+    }))
     .pipe(gp.svgstore({
       inlineSvg: true                                     // прописываем условие на тот случай, если будем инлайнить спрайт в html
     }))
@@ -138,7 +142,6 @@ gulp.task('default',
     'images:decor',
     'images:content'
     // 'webp',
-    // 'sprite'
   ),
   gulp.parallel(
     'watch',

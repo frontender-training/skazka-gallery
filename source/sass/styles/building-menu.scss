@@ -1,6 +1,6 @@
 .building-menu {
   @include aside-wrap;
-  padding-top: 45px;
+  padding-top: 43px;
   margin-top: 0;
   margin-bottom: 18px;
   list-style: none;
@@ -12,4 +12,8 @@
 
 .building-menu__link {
   @include menu-style ($color-menu);
+}
+
+.building-menu__icon {
+  @include menu-icon;
 }
