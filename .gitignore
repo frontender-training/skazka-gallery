@@ -9,6 +9,5 @@
 css/*.css
 bg/
 node_modules/
-public/
 npm-debug.*
 Thumbs.db

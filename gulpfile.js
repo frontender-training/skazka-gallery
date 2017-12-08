@@ -121,7 +121,7 @@ gulp.task('serve', function() {
   });
 
 gulp.task('watch', function() {
-    // $.gulp.watch('./source/js/**/*.js', $.gulp.series('js:process'));
+    gulp.watch('./source/js/**/*.js', gulp.series('copy'));
     gulp.watch('./source/sass/**/*.scss', gulp.series('styles'));     // следим за CSS
     gulp.watch('./source/**/*.html', gulp.series('html:process'));  // следим за HTML
     gulp.watch('./source/img/content/**/*.*', gulp.series('images:content')); // следим за картинками
