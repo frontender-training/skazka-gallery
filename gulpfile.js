@@ -91,6 +91,15 @@ gulp.task('sprite', function () {
     .pipe(gulp.dest('./public/img/'));                    // записываем файл
 });
 
+// ЗАДАЧА: Минимизируем JS
+gulp.task('js:process', function () {
+  return gulp.src('./source/js/lightgallery.js')
+    .pipe(gp.plumber())
+    .pipe(gp.uglify())
+    .pipe(gp.rename('lightgallery.min.js'))
+    .pipe(gulp.dest('./public/js/'))
+});
+
 // ЗАДАЧА: Удаляем папку public
 gulp.task('clean', function() {
   return del('./public');
@@ -121,8 +130,8 @@ gulp.task('serve', function() {
   });
 
 gulp.task('watch', function() {
-    gulp.watch('./source/js/**/*.js', gulp.series('copy'));
-    gulp.watch('./source/sass/**/*.scss', gulp.series('styles'));     // следим за CSS
+    gulp.watch('./source/js/**/*.js', gulp.series('js:process'));   // следим за JS
+    gulp.watch('./source/sass/**/*.scss', gulp.series('styles'));    // следим за CSS
     gulp.watch('./source/**/*.html', gulp.series('html:process'));  // следим за HTML
     gulp.watch('./source/img/content/**/*.*', gulp.series('images:content')); // следим за картинками
     gulp.watch('./source/img/decoration/**/*.*', gulp.series('images:decor')); // следим за картинками
@@ -137,6 +146,7 @@ gulp.task('default',
   'copy',
   'sprite',
   'html:process',
+  'js:process',
   gulp.parallel(
     'styles',
     'images:decor',

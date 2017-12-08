@@ -63,6 +63,24 @@
       margin-bottom: 5px;
     }
   }
+
+  &:hover {
+    background-color: #331e19;
+    color: #cfc38f;
+  }
+
+  &:hover .gallery__icon {
+    fill: #cfc38f;
+  }
+
+  &:focus {
+    background-color: #331e19;
+    color: #cfc38f;
+  }
+
+  &:focus .gallery__icon {
+    fill: #cfc38f;
+  }
 }
 
 .gallery__info {
