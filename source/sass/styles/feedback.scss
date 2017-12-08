@@ -62,6 +62,10 @@
 .feedback__desc {
   display: block;
   color: #cfc38f;
+
+  @media screen and (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .feedback__icon {

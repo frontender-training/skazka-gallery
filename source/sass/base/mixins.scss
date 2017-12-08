@@ -5,6 +5,11 @@
 @mixin aside-wrap {
   padding-left: 45px;
   padding-right: 15px;
+
+
+  @media screen and (max-width: $tablet-width) {
+    padding-left: 30px;
+  }
 }
 
 @mixin menu-item {
@@ -51,6 +56,13 @@
     line-height: 11px;
     vertical-align: middle;
   }
+
+  .user-nav__user-name {
+    @media screen and (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+
 }
 
 @mixin menu-icon {

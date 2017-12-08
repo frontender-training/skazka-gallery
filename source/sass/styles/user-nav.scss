@@ -9,6 +9,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  @media screen and (max-width: $mobile-width) {
+    justify-content: center;
+  }
 }
 
 .user-nav__link {
@@ -17,6 +21,10 @@
 
   &--msg {
     margin-right: 48px;
+
+  @media screen and (max-width: $mobile-width) {
+    margin-right: 10px;
+  }
 
     .user-nav__msg {
       line-height: 18px;
@@ -35,6 +43,10 @@
     display: flex;
     align-items: center;
     margin-right: 34px;
+
+    @media screen and (max-width: $mobile-width) {
+      margin-right: 10px;
+    }
   }
 
   &:hover .user-nav__msg-count {
@@ -61,6 +73,11 @@
 
 .user-nav__user-avatar {
   border-radius: 50%;
+
+  @media screen and (max-width: $mobile-width) {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 .user-nav__user-name {
@@ -74,4 +91,6 @@
   margin-top: 4px;
   align-self: baseline;
 }
+
+
 

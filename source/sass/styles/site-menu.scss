@@ -3,6 +3,10 @@
   margin-top: 0;
   margin-bottom: 155px;
   list-style: none;
+
+  @media screen and (max-width: $mobile-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .site-menu__item {

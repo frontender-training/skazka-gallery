@@ -5,4 +5,17 @@
   position: fixed;
   top: 90px;
   overflow-y: auto;
+  z-index: 2;
+
+  @media screen and (max-width: $tablet-width) {
+    width: 250px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    width: 320px;
+    position: relative;
+    top: 30px;
+    overflow: inherit;
+    height: inherit;
+  }
 }
