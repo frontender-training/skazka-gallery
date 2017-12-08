@@ -16,6 +16,7 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
 }
 
 .lg-actions .lg-next, .lg-actions .lg-prev {
@@ -36,9 +37,10 @@
   pointer-events: none;
   opacity: 0.5;
 }
-// .lg-actions .lg-next:hover, .lg-actions .lg-prev:hover {
-//   color: #FFF;
-// }
+.lg-actions .lg-next:hover, .lg-actions .lg-prev:hover
+.lg-actions .lg-close:hover {
+  cursor: pointer;
+}
 .lg-actions .lg-next {
   right: 19%;
 }
@@ -195,9 +197,13 @@
   -webkit-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
-// .lg-actions .lg-icon:hover {
-//   color: #FFF;
-// }
+.lg-actions .lg-icon:hover,
+.lg-actions .lg-icon:focus,
+.lg-actions .lg-close:focus,
+.lg-actions .lg-close:hover {
+  cursor: pointer;
+}
+
 .lg-actions .lg-close:after {
   // content: "\e070";
   content: "";
