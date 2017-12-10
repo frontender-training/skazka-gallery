@@ -173,6 +173,10 @@
   @media screen and (max-width: $tablet-width) {
     width: calc(768px - 285px);
   }
+
+  @media screen and (max-width: $tablet-width) {
+    width: 320px;
+  }
 }
 
 .gallery__item {
