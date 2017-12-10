@@ -1,11 +1,8 @@
 .sidebar {
   width: 285px;
-  height: calc(100vh - 90px);
+  height: 815px;
+  min-height: 815px;
   background-color: #cfc38f;
-  position: fixed;
-  top: 90px;
-  overflow-y: auto;
-  z-index: 2;
 
   @media screen and (max-width: $tablet-width) {
     width: 250px;
@@ -14,7 +11,6 @@
   @media screen and (max-width: $mobile-width) {
     width: 320px;
     position: relative;
-    top: 30px;
     overflow: inherit;
     height: inherit;
   }

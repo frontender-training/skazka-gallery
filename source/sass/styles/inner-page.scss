@@ -1,7 +1,6 @@
 .inner-page {
   width: 1280px;
   padding: 0;
-  padding-top: 90px;
   margin: 0 auto;
   background-color: ffffff;
   font-family: $font-family;
@@ -26,7 +25,7 @@
 }
 
 .inner-page__main {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
 
   @media screen and (max-width: $mobile-width) {

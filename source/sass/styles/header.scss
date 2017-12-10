@@ -4,11 +4,8 @@
   background-image: url('../img/decoration/bg-header.svg');
   background-position: 161px 0;
   background-repeat: no-repeat;
-  top: 0;
-  position: fixed;
   width: 100%;
   max-width: 1280px;
-  z-index: 10;
 
   @media screen and (max-width: $mobile-width) {
     width: 320px;

@@ -2,16 +2,18 @@
   width: calc(100% - 285px);
   display: flex;
   flex-wrap: wrap;
-  margin-left: 285px;
+  height: 815px;
+  min-height: 815px;
+  // height: min-content;
+  // // overflow-x: hidden;
+  overflow-y: auto;
 
   @media screen and (max-width: $tablet-width) {
     width: calc(768px - 270px);
-    margin-left: 250px;
   }
 
   @media screen and (max-width: $mobile-width) {
     width: 320px;
-    margin-left: 0;
   }
 }
 
@@ -22,7 +24,8 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 500;
-  width: 995px;
+  width: 100%;
+  max-width: 995px;
   height: 80px;
   padding-top: 27px;
   padding-bottom: 30px;
@@ -39,7 +42,6 @@
   padding-right: 40px;
   padding-top: 20px;
   padding-bottom: 40px;
-  width: 702px;
   width: 71%;
   height: 145px;
   display: flex;
@@ -72,7 +74,6 @@
 
 .gallery__backlink {
   @include text-size(14px, 18px);
-  width: 293px;
   width: 29%;
   height: 145px;
   display: block;
@@ -85,6 +86,10 @@
   padding-right: 30px;
   padding-bottom: 40px;
   flex-grow: 1;
+
+  @media screen and (max-width: $desktop-width) {
+    width: 1024px;
+  }
 
   @media screen and (max-width: $tablet-width) {
     flex-grow: 0;
@@ -152,19 +157,22 @@
 }
 
 .gallery__list {
-  width: 995px;
+  max-width: 995px;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: flex-start;
+  height: min-content;
 
   @media screen and (max-width: $desktop-width) {
     width: calc(1024px - 285px);
+    justify-content: center
   }
 
-  @media screen and (max-width: $desktop-width) {
+  @media screen and (max-width: $tablet-width) {
     width: calc(768px - 285px);
   }
 }
@@ -173,12 +181,10 @@
   display: block;
   padding: 0;
   margin: 0;
-  width: auto;
-  min-width: 158px;
+  min-width: 156px;
   max-width: 279px;
   height: 195px;
   position: relative;
-  flex-shrink: 0;
 
   &:hover .gallery__item-hover,
   &:hover .gallery__item-hover::before {
@@ -195,8 +201,6 @@
 
 .gallery__item-hover {
   width: 100%;
-  min-width: 158px;
-  max-width: 279px;
   height: 195px;
   position: absolute;
   top: 0;
@@ -229,6 +233,7 @@
 .gallery__thumb {
   width: auto;
   height: 195px;
+  padding: 0;
   display: block;
 }
 

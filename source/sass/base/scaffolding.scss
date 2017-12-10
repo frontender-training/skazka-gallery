@@ -40,3 +40,9 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.fixed {
+  position: fixed;
+  top: 90px;
+  z-index: 2;
+}
