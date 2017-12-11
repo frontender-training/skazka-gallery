@@ -4,7 +4,12 @@
   flex-wrap: wrap;
   height: 815px;
   min-height: 815px;
-  overflow-y: auto;
+
+  @media screen and (min-width: $desktop-width) {
+    overflow-y: auto;
+    overflow-y: overlay;
+    min-height: 815px;
+  }
 
   @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
     width: 768px;
