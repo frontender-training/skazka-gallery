@@ -11,6 +11,7 @@
   align-items: center;
 
   @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
+    width: 235px;
     justify-content: center;
   }
 }
