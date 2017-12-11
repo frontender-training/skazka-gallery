@@ -5,7 +5,7 @@
   margin-bottom: 18px;
   list-style: none;
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $tablet-width-only) {
     padding-top: 15px;
   }
 }

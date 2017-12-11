@@ -1,16 +1,75 @@
 .sidebar {
   width: 285px;
+  height: 815px;
   min-height: 815px;
   background-color: #cfc38f;
 
-  @media screen and (max-width: $tablet-width) {
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    display: none;
     width: 250px;
+    height: max-content;
+    min-height: 615px;
+    position: absolute;
+    z-index: 2;
+
+    &--show {
+      display: block;
+    }
   }
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
     width: 320px;
+    min-height: 618px;
     position: relative;
     overflow: inherit;
     height: inherit;
+  }
+}
+
+.sidebar__close {
+  display: none;
+
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 15px;
+    right: 30px;
+    border: 0;
+    background-color: transparent;
+
+    &::after,
+    &::before  {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: -1px;
+      width: 15px;
+      height: 3px;
+      cursor: pointer;
+      background-color: #4f3f00;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover::after,
+    &:hover::before,
+    &:focus::after,
+    &:focus::before {
+      background-color: $color-orange;
+    }
+
+    &:active::after,
+    &:active::before {
+      background-color: $color-green;
+    }
   }
 }

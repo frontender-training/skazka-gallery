@@ -93,10 +93,13 @@ gulp.task('sprite', function () {
 
 // ЗАДАЧА: Минимизируем JS
 gulp.task('js:process', function () {
-  return gulp.src('./source/js/lightgallery.js')
+  return gulp.src([
+    './source/js/lightgallery.js',
+    './source/js/menu.js'
+    ])
     .pipe(gp.plumber())
     .pipe(gp.uglify())
-    .pipe(gp.rename('lightgallery.min.js'))
+    .pipe(gp.rename({ suffix: '.min' }))
     .pipe(gulp.dest('./public/js/'))
 });
 

@@ -6,12 +6,16 @@
   min-height: 815px;
   overflow-y: auto;
 
-  @media screen and (max-width: $tablet-width) {
-    width: calc(768px - 270px);
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    width: 768px;
+    height: 675px;
+    min-height: 675px;
+    overflow-y: visible;
   }
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
     width: 320px;
+    overflow-y: visible;
   }
 }
 
@@ -27,10 +31,11 @@
   height: 80px;
   padding-top: 27px;
   padding-bottom: 30px;
+  padding-right: 30px;
   margin: 0;
   border-bottom: 1px solid #ebebeb;
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
     width: 320px;
   }
 }
@@ -45,18 +50,17 @@
   display: flex;
   justify-content: space-between;
 
-  @media screen and (max-width: $desktop-width) {
-    width: calc(1024px - 285px);
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    width: 71%;
   }
 
-  @media screen and (max-width: $tablet-width) {
-    width: calc(768px - 250px);
-  }
-
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
     width: 320px;
     flex-wrap: wrap;
-    height: 195px;
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 40px;
   }
 }
 
@@ -68,6 +72,11 @@
   text-transform: uppercase;
   text-align: right;
   letter-spacing: 2px;
+
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .gallery__backlink {
@@ -85,13 +94,12 @@
   padding-bottom: 40px;
   flex-grow: 1;
 
-  @media screen and (max-width: $desktop-width) {
-    width: 1024px;
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    width: 29%;
   }
 
-  @media screen and (max-width: $tablet-width) {
-    flex-grow: 0;
-    width: 500px;
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
+    width: 320px;
   }
 
   span {
@@ -119,11 +127,19 @@
   &:focus .gallery__icon {
     fill: #cfc38f;
   }
+
+  &:active {
+    opacity: 0.9;
+  }
 }
 
 .gallery__info {
   width: 200px;
   padding-top: 4px;
+
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
+    margin-bottom: 20px;
+  }
 }
 
 .gallery__album-name {
@@ -148,7 +164,7 @@
   color: #cfc38f;
   margin-bottom: 30px;
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
     display: inline-block;
     margin-bottom: 0;
   }
@@ -165,17 +181,21 @@
   align-items: flex-start;
   height: min-content;
 
-  @media screen and (max-width: $desktop-width) {
-    width: calc(1024px - 285px);
-    justify-content: center
+  @media screen and (min-width: $desktop-width) {
+    max-width: 995px;
+    justify-content: center;
   }
 
-  @media screen and (max-width: $tablet-width) {
-    width: calc(768px - 285px);
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    width: 768px;
+    // height: min-content;
+    // min-height: 615px;
+    // height: 615px;
   }
 
-  @media screen and (max-width: $tablet-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
     width: 320px;
+    justify-content: center;
   }
 }
 
@@ -183,10 +203,16 @@
   display: block;
   padding: 0;
   margin: 0;
-  min-width: 156px;
+  min-width: 158px;
   max-width: 279px;
   height: 195px;
   position: relative;
+
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    min-width: 122px;
+    max-width: 215px;
+    height: 150px;
+  }
 
   &:hover .gallery__item-hover,
   &:hover .gallery__item-hover::before {
@@ -210,6 +236,10 @@
   background-color: rgba(51, 30, 25, 0.7);
   z-index: 1;
   display: none;
+
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    height: 150px;
+  }
 
   &::before {
     content: '';
@@ -237,6 +267,10 @@
   height: 195px;
   padding: 0;
   display: block;
+
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    height: 150px;
+  }
 }
 
 .gallery__icon {

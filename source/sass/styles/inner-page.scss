@@ -1,5 +1,4 @@
 .inner-page {
-  width: 1280px;
   padding: 0;
   margin: 0 auto;
   background-color: ffffff;
@@ -11,24 +10,97 @@
   height: 100vh;
   overflow-x: hidden;
 
-  @media screen and (max-width: $desktop-width) {
-    width: 1024px;
+  @media screen and (min-width: $desktop-width) {
+    min-width: 1024px;
+    max-width: 1280px;
   }
 
-  @media screen and (max-width: $tablet-width) {
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
     width: 768px;
   }
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
     width: 320px;
   }
 }
 
 .inner-page__main {
-  min-height: 100vh;
   display: flex;
+  margin: 0 auto;
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (max-width: $desktop-width) {
+    min-idth: 1024px;
+    max-width: 1280px;
+  }
+
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    width: 768px;
+    position: relative;
+  }
+
+  @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
+    width: 320px;
     flex-direction: column;
+  }
+}
+
+.inner-page__menu {
+  display: none;
+
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+    content: '';
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    top: 74px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #4f3f00;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 11px;
+    text-align: left;
+    background-color: #cfc38f;
+    display: block;
+    border-radius: 5px;
+    border: 2px solid $color-orange;
+    z-index: 2;
+
+    &:hover,
+    &:focus {
+      color: $color-orange;
+      cursor: pointer;
+    }
+
+    &:active {
+      color: $color-green;
+      cursor: pointer;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 18px;
+      height: 3px;
+      background-color: #4f3f00;
+      box-shadow: 0 8px 0 0 #4f3f00, 0 16px 0 0 #4f3f00;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      background-color: $color-orange;
+      box-shadow: 0 8px 0 0 $color-orange, 0 16px 0 0 $color-orange;
+    }
+
+    &:active::before {
+      background-color: $color-green;
+      box-shadow: 0 8px 0 0 $color-green, 0 16px 0 0 $color-green;
+    }
+
+    &--closed {
+      display: none;
+    }
   }
 }

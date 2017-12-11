@@ -49,6 +49,10 @@
   &:focus {
     background-color: #331e19;
   }
+
+  &:active {
+    opacity: 0.9;
+  }
 }
 
 .feedback__link {
@@ -63,7 +67,7 @@
   display: block;
   color: #cfc38f;
 
-  @media screen and (max-width: $tablet-width) {
+  @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only){
     display: none;
   }
 }
