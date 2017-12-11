@@ -194,6 +194,7 @@
 
   @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
     width: 768px;
+    height: min-content;
   }
 
   @media screen and (min-width: $mobile-width) and (max-width: $mobile-width-only) {
@@ -208,8 +209,7 @@
   margin: 0;
   min-width: 158px;
   max-width: 270px;
-  min-height: 190px;
-  max-height: 195px;
+  height: 195px;
   position: relative;
 
   @media screen and (min-width: $tablet-width) and (max-width: $tablet-width-only) {
